@@ -1,3 +1,6 @@
+-- SQL script that creates a trigger that resets the attribute valid_email
+
+
 DELIMITER $$ ;
 CREATE TRIGGER resets_valid_email BEFORE UPDATE ON users
 FOR EACH ROW
