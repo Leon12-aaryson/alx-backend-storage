@@ -8,6 +8,10 @@ import pymongo
 
 
 def log_stats(mongo_collection):
+    """
+    function to collect the log stats
+    and calculate them
+    """
     try:
         # Calculate the number of logs
         num_logs = mongo_collection.count_documents({})
