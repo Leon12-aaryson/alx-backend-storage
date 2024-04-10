@@ -1,14 +1,2 @@
-import pymongo
-
-def create_or_use_database():
-    # Connect to MongoDB server
-    client = pymongo.MongoClient("mongodb://localhost:27017/")
-
-    # Access or create the database 'my_db'
-    db = client["my_db"]
-
-    # Confirm creation or usage of the database
-    print("Connected to database 'my_db'")
-
-if __name__ == "__main__":
-    create_or_use_database()
+// script that creates database
+use my_db
