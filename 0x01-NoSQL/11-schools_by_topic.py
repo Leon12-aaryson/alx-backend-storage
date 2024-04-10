@@ -1,9 +1,15 @@
 #!/usr/bin/env python3
+'''
+module that lists schools havingg specific topics
+'''
 
 import pymongo
 
 
 def schools_by_topic(mongo_collection, topic):
+    '''
+    function that returns the list of school having a specific topic:
+    '''
     try:
         # Find schools that have the specified topic
         matching_schools = mongo_collection.find({"topics": topic})
