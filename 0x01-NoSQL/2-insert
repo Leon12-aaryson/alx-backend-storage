@@ -1,0 +1,33 @@
+import pymongo
+import sys
+
+def insert_document(database_name):
+    # Connect to MongoDB server
+    client = pymongo.MongoClient("mongodb://localhost:27017/")
+
+    # Access or create the specified database
+    db = client[database_name]
+
+    # Access or create the collection 'school'
+    collection = db["school"]
+
+    # Create the document to insert
+    document = {"name": "Holberton school"}
+
+    # Insert the document into the collection
+    collection.insert_one(document)
+
+    # Print confirmation message
+    print("Document inserted into the 'school' collection in database '{}'.".format(database_name))
+
+if __name__ == "__main__":
+    # Check if the database name is provided as a command-line argument
+    if len(sys.argv) != 2:
+        print("Usage: python script_name.py database_name")
+        sys.exit(1)
+
+    # Get the database name from the command-line arguments
+    database_name = sys.argv[1]
+
+    # Call the function to insert the document into the collection
+    insert_document(database_name)
